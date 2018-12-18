@@ -7,10 +7,27 @@ public class CalculateDateInMonth {
         int month = scanner.nextInt();
 
         String daysInMonth;
-
+        private	static	boolean	isLeapYear(int	year)	{ 
+        boolean	isLeapYear	=	false;    
+            if(year	%	4 == 0){       
+                if	(year	%	100 == 0){            
+                    if(year	%	400 == 0) 
+                        isLeapYear	=	true;        
+          } 
+            else	{ 
+            isLeapYear	=	true;       
+      }     
+            return	isLeapYear; 
         switch (month) {
             case 2:
-                daysInMonth = "28 or 29";
+                boolean	isLeapYear	=	isLeapYear(year);            
+                if(isLeapYear){                
+                    return	29;            
+                } else	{                
+                    return	28;            
+                }        
+                    default:            
+                return	0; 
                 break;
             case 1:
             case 3:
